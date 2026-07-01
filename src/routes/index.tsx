@@ -189,7 +189,7 @@ function PaymentCard({
         <img
           src={paypalPreferred.url}
           alt="PayPal Preferred Payments Partner"
-          className="h-[42px] w-auto object-contain"
+          className="h-[56px] w-auto object-contain"
         />
       </div>
 
