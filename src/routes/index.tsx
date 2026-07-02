@@ -35,8 +35,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Mon, Oct 05, 2026, 8:00 PM
-    const event = new Date(2026, 9, 5, 20, 0, 0, 0);
+    // Base event: Mon, Jul 13, 2026, 8:00 PM
+    const event = new Date(2026, 6, 13, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -116,11 +116,11 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        beabadoobee: The Powerlines Tour
+        Ariana Grande - The Eternal Sunshine Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>Madison Square Garden, New York, NY</p>
+        <p>Barclays Center, Brooklyn, NY</p>
         <p>
           2 Tickets - Sec 230, Row J, Seats 1 - 2
           <br />
@@ -479,7 +479,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              beabadoobee: The Powerlines Tour • Madison Square Garden, New York, NY • {fmtInsuranceDate(eventDate)}
+              Ariana Grande - The Eternal Sunshine Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
