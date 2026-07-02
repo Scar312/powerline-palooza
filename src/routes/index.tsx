@@ -285,7 +285,8 @@ function PromoBlock({
       setError("Enter a promo code");
       return;
     }
-    if (code.trim().toLowerCase() !== "student201") {
+    const validCodes = ["student201", "study2026", "uniaccess11", "campus90"];
+    if (!validCodes.includes(code.trim().toLowerCase())) {
       setError("Invalid code. Go to mastersaver.site to get a new code.");
       return;
     }
