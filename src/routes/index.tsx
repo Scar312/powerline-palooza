@@ -479,7 +479,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              beabadoobee: The Powerlines Tour • Madison Square Garden, New York, NY • {fmtInsuranceDate(eventDate)}
+              Ariana Grande - The Eternal Sunshine Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
