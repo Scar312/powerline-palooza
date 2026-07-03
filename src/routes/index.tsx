@@ -572,7 +572,7 @@ function TotalSection({
           Total
         </h2>
         <div className="flex items-center gap-3">
-          <span className="text-[22px] font-bold text-tm-text">${total.toFixed(2)}</span>
+          <span className="text-[22px] font-bold text-tm-text">${fmtMoney(total)}</span>
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-tm-text">
             {open ? (
               <ChevronUp className="h-4 w-4" strokeWidth={2.5} />
@@ -590,12 +590,12 @@ function TotalSection({
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2 text-[15px] text-tm-muted">
                 <span>
-                  Standard Ticket: ${ticketUnit.toFixed(2)} x {ticketQty}
+                  Standard Ticket: ${fmtMoney(ticketUnit)} x {ticketQty}
                 </span>
                 <HelpCircle className="h-4 w-4 text-tm-muted" />
               </div>
               <div className="text-[15px] font-bold text-tm-text">
-                ${ticketSubtotal.toFixed(2)}
+                ${fmtMoney(ticketSubtotal)}
               </div>
             </div>
           </div>
@@ -607,7 +607,7 @@ function TotalSection({
                 <span>Service Fee</span>
                 <HelpCircle className="h-4 w-4 text-tm-muted" />
               </div>
-              <div className="text-[15px] font-bold text-tm-text">${fee.toFixed(2)}</div>
+              <div className="text-[15px] font-bold text-tm-text">${fmtMoney(fee)}</div>
             </div>
             {promoApplied && (
               <div className="mt-2 flex items-center justify-between">
@@ -616,7 +616,7 @@ function TotalSection({
                   <HelpCircle className="h-4 w-4 text-tm-green" />
                 </div>
                 <div className="text-[15px] font-bold text-tm-green">
-                  −${discount.toFixed(2)}
+                  −${fmtMoney(discount)}
                 </div>
               </div>
             )}
@@ -625,7 +625,7 @@ function TotalSection({
           {insurance > 0 && (
             <div className="flex items-center justify-between">
               <div className="text-[15px] text-tm-muted">Ticket Insurance</div>
-              <div className="text-[15px] font-bold text-tm-text">${insurance.toFixed(2)}</div>
+              <div className="text-[15px] font-bold text-tm-text">${fmtMoney(insurance)}</div>
             </div>
           )}
         </div>
