@@ -426,21 +426,14 @@ function InsuranceCard({
         )}
       </div>
 
-      <div className="mt-5 h-[6px] w-full bg-tm-blue-strong" />
-
       <div className="px-6 pt-6">
         <p className="text-[16px] leading-snug text-tm-text">
-          <span className="font-bold">Don't lose your money if plans change. Get 80%</span> of your
-          ticket purchase back for <span className="italic">almost any unforeseen reason</span> that
-          keeps you from going to your event{" "}
-          <span className="font-bold">
-            for only ${perTicket.toFixed(2)} per ticket (${insurancePrice.toFixed(2)} total).
-          </span>
+          With Ticket Insurance, <span className="font-bold">you can get back up to 100% of your money,</span> including taxes, parking, fees, or other event-related costs in your order. This protection is <span className="font-bold">available for just ${perTicket.toFixed(2)} per ticket (${insurancePrice.toFixed(2)} total).</span>
         </p>
         <p className="mt-4 text-[16px] leading-snug text-tm-text">
-          Or get back up to 100% of your purchase price if you can't attend your event for a number
-          of <span className="italic">covered</span> reasons, such as:
+          It's inexpensive for the peace of mind it can give you when something unexpected happens. If you can't attend this event for a number of covered reasons like covered illness, injury, airline delays, traffic accidents, weather emergencies, mechanical breakdowns, if you're required to work and more, you can be reimbursed for your resale ticket purchase.
         </p>
+
 
         <ul className="mt-5 space-y-4">
           <Reason icon={<BriefcaseMedical className="h-4 w-4" strokeWidth={2.2} />}>
@@ -568,7 +561,7 @@ function TotalSection({
 }) {
   const [open, setOpen] = useState(true);
   return (
-    <Card className="mt-3 px-6 pb-8 pt-6">
+    <div className="mt-6 border-t border-tm-border/60 px-6 pb-8 pt-6">
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between">
         <h2 className="relative text-[22px] font-bold uppercase tracking-[0.005em] text-tm-text">
           <span className="absolute -top-2 left-0 h-[3px] w-7 bg-tm-text" />
@@ -667,16 +660,17 @@ function TotalSection({
       <p className="mt-3 text-[12px] font-bold text-tm-text">
         *Exceptions may apply, see our Terms of Use.
       </p>
-    </Card>
+    </div>
+
   );
 }
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT = 280.45;
+const TICKET_UNIT = 532.00;
 const TICKET_QTY = 2;
 const SERVICE_FEE = 94.60;
-const INSURANCE_PER_TICKET = 12.75;
+const INSURANCE_PER_TICKET = 60.00;
 
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
