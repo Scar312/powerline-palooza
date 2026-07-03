@@ -67,6 +67,11 @@ function fmtInsuranceDate(d: Date) {
   return `${MONTH_SHORT_3[d.getMonth()]}-${d.getDate().toString().padStart(2, "0")}-${yy}`;
 }
 
+function fmtMoney(n: number) {
+  return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+
 /* ------------------------------- Header ------------------------------- */
 
 function TopBar() {
@@ -428,7 +433,7 @@ function InsuranceCard({
 
       <div className="px-6 pt-6">
         <p className="text-[16px] leading-snug text-tm-text">
-          With Ticket Insurance, <span className="font-bold">you can get back up to 100% of your money,</span> including taxes, parking, fees, or other event-related costs in your order. This protection is <span className="font-bold">available for just ${perTicket.toFixed(2)} per ticket (${insurancePrice.toFixed(2)} total).</span>
+          With Ticket Insurance, <span className="font-bold">you can get back up to 100% of your money,</span> including taxes, parking, fees, or other event-related costs in your order. This protection is <span className="font-bold">available for just ${fmtMoney(perTicket)} per ticket (${fmtMoney(insurancePrice)} total).</span>
         </p>
         <p className="mt-4 text-[16px] leading-snug text-tm-text">
           It's inexpensive for the peace of mind it can give you when something unexpected happens. If you can't attend this event for a number of covered reasons like covered illness, injury, airline delays, traffic accidents, weather emergencies, mechanical breakdowns, if you're required to work and more, you can be reimbursed for your resale ticket purchase.
@@ -485,7 +490,7 @@ function InsuranceCard({
           <Radio selected={choice === "no"} />
           <div className="flex-1 text-[16px] leading-snug text-tm-text">
             No, do not protect my ticket purchase. I understand this may put my{" "}
-            <span className="whitespace-nowrap">${ticketTotal.toFixed(2)}</span> at risk.
+            <span className="whitespace-nowrap">${fmtMoney(ticketTotal)}</span> at risk.
           </div>
         </button>
 
@@ -501,8 +506,7 @@ function InsuranceCard({
           . Terms &amp; exclusions (incl. for pre-existing conditions) apply. Recommended/offered/
           sold by Allianz Partners. Underwriter: Jefferson Insurance Company. Plan incl. insurance
           &amp; assistance services. By clicking yes, you authorize Ticketmaster to send your name,
-          address, and credit card information to Allianz Partners, who will charge your card $
-          {insurancePrice.toFixed(2)} on the terms described above.
+          address, and credit card information to Allianz Partners, who will charge your card ${fmtMoney(insurancePrice)} on the terms described above.
         </p>
       </div>
     </Card>
@@ -568,7 +572,7 @@ function TotalSection({
           Total
         </h2>
         <div className="flex items-center gap-3">
-          <span className="text-[22px] font-bold text-tm-text">${total.toFixed(2)}</span>
+          <span className="text-[22px] font-bold text-tm-text">${fmtMoney(total)}</span>
           <span className="flex h-7 w-7 items-center justify-center rounded-full border border-tm-text">
             {open ? (
               <ChevronUp className="h-4 w-4" strokeWidth={2.5} />
@@ -586,12 +590,12 @@ function TotalSection({
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2 text-[15px] text-tm-muted">
                 <span>
-                  Standard Ticket: ${ticketUnit.toFixed(2)} x {ticketQty}
+                  Standard Ticket: ${fmtMoney(ticketUnit)} x {ticketQty}
                 </span>
                 <HelpCircle className="h-4 w-4 text-tm-muted" />
               </div>
               <div className="text-[15px] font-bold text-tm-text">
-                ${ticketSubtotal.toFixed(2)}
+                ${fmtMoney(ticketSubtotal)}
               </div>
             </div>
           </div>
@@ -603,7 +607,7 @@ function TotalSection({
                 <span>Service Fee</span>
                 <HelpCircle className="h-4 w-4 text-tm-muted" />
               </div>
-              <div className="text-[15px] font-bold text-tm-text">${fee.toFixed(2)}</div>
+              <div className="text-[15px] font-bold text-tm-text">${fmtMoney(fee)}</div>
             </div>
             {promoApplied && (
               <div className="mt-2 flex items-center justify-between">
@@ -612,7 +616,7 @@ function TotalSection({
                   <HelpCircle className="h-4 w-4 text-tm-green" />
                 </div>
                 <div className="text-[15px] font-bold text-tm-green">
-                  −${discount.toFixed(2)}
+                  −${fmtMoney(discount)}
                 </div>
               </div>
             )}
@@ -621,7 +625,7 @@ function TotalSection({
           {insurance > 0 && (
             <div className="flex items-center justify-between">
               <div className="text-[15px] text-tm-muted">Ticket Insurance</div>
-              <div className="text-[15px] font-bold text-tm-text">${insurance.toFixed(2)}</div>
+              <div className="text-[15px] font-bold text-tm-text">${fmtMoney(insurance)}</div>
             </div>
           )}
         </div>
@@ -731,7 +735,7 @@ function CheckoutPage() {
             </div>
             <h3 className="mt-4 text-[20px] font-bold">Order Placed</h3>
             <p className="mt-2 text-[14px] text-tm-muted">
-              Total charged: <span className="font-bold text-tm-text">${total.toFixed(2)}</span>
+              Total charged: <span className="font-bold text-tm-text">${fmtMoney(total)}</span>
             </p>
             <button
               onClick={() => setPlaced(false)}
