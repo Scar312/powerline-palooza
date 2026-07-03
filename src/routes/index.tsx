@@ -35,8 +35,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Mon, Jul 13, 2026, 8:00 PM
-    const event = new Date(2026, 6, 13, 20, 0, 0, 0);
+    // Base event: Tue, Sep 01, 2026, 8:00 PM
+    const event = new Date(2026, 8, 1, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -116,11 +116,11 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        Ariana Grande - The Eternal Sunshine Tour
+        BTS WORLD TOUR 'ARIRANG' IN LOS ANGELES
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>Barclays Center, Brooklyn, NY</p>
+        <p>SoFi Stadium, Inglewood, CA</p>
         <p>
           2 Tickets - Sec 230, Row J, Seats 1 - 2
           <br />
@@ -480,7 +480,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              Ariana Grande - The Eternal Sunshine Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
+              BTS WORLD TOUR 'ARIRANG' IN LOS ANGELES • SoFi Stadium, Inglewood, CA • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
@@ -689,7 +689,7 @@ function CheckoutPage() {
   const insuranceTotal = INSURANCE_PER_TICKET * TICKET_QTY;
   const insuranceCharge = insurance === "yes" ? insuranceTotal : 0;
   const baseTotal = ticketSubtotal + SERVICE_FEE + insuranceCharge;
-  const discount = promo ? baseTotal * 0.9 : 0;
+  const discount = promo ? baseTotal * 0.85 : 0;
   const total = Math.max(0, baseTotal - discount);
 
   return (
