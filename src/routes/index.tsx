@@ -568,7 +568,7 @@ function TotalSection({
 }) {
   const [open, setOpen] = useState(true);
   return (
-    <Card className="mt-3 px-6 pb-8 pt-6">
+    <div className="mt-6 border-t border-tm-border/60 px-6 pb-8 pt-6">
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between">
         <h2 className="relative text-[22px] font-bold uppercase tracking-[0.005em] text-tm-text">
           <span className="absolute -top-2 left-0 h-[3px] w-7 bg-tm-text" />
