@@ -735,7 +735,7 @@ function CheckoutPage() {
             </div>
             <h3 className="mt-4 text-[20px] font-bold">Order Placed</h3>
             <p className="mt-2 text-[14px] text-tm-muted">
-              Total charged: <span className="font-bold text-tm-text">${total.toFixed(2)}</span>
+              Total charged: <span className="font-bold text-tm-text">${fmtMoney(total)}</span>
             </p>
             <button
               onClick={() => setPlaced(false)}
