@@ -673,10 +673,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT = 280.45;
+const TICKET_UNIT = 532.00;
 const TICKET_QTY = 2;
 const SERVICE_FEE = 94.60;
-const INSURANCE_PER_TICKET = 12.75;
+const INSURANCE_PER_TICKET = 60.00;
 
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
