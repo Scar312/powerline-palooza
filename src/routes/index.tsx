@@ -667,7 +667,8 @@ function TotalSection({
       <p className="mt-3 text-[12px] font-bold text-tm-text">
         *Exceptions may apply, see our Terms of Use.
       </p>
-    </Card>
+    </div>
+
   );
 }
 
