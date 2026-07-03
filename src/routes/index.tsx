@@ -67,6 +67,11 @@ function fmtInsuranceDate(d: Date) {
   return `${MONTH_SHORT_3[d.getMonth()]}-${d.getDate().toString().padStart(2, "0")}-${yy}`;
 }
 
+function fmtMoney(n: number) {
+  return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+
 /* ------------------------------- Header ------------------------------- */
 
 function TopBar() {
