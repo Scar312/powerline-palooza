@@ -35,8 +35,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Tue, Sep 01, 2026, 8:00 PM
-    const event = new Date(2026, 8, 1, 20, 0, 0, 0);
+    // Base event: Sun, Aug 02, 2026, 7:00 PM
+    const event = new Date(2026, 7, 2, 19, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -57,10 +57,10 @@ function ordinal(n: number) {
 }
 
 function fmtEventLong(d: Date) {
-  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} • 8:00 PM`;
+  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 7:00 PM`;
 }
 function fmtBarcode(d: Date) {
-  return `8:00 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
+  return `7:00 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
 }
 function fmtInsuranceDate(d: Date) {
   const yy = d.getFullYear().toString().slice(-2);
@@ -121,11 +121,11 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        BTS WORLD TOUR 'ARIRANG' IN LOS ANGELES
+        Tame Impala - The Deadbeat Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>SoFi Stadium, Inglewood, CA</p>
+        <p>Spectrum Center, Charlotte, NC</p>
         <p>
           2 Tickets - Sec 230, Row J, Seats 1 - 2
           <br />
@@ -478,7 +478,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              BTS WORLD TOUR 'ARIRANG' IN LOS ANGELES • SoFi Stadium, Inglewood, CA • {fmtInsuranceDate(eventDate)}
+              Tame Impala - The Deadbeat Tour • Spectrum Center, Charlotte, NC • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
@@ -671,10 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT = 532.00;
+const TICKET_UNIT = 230.00;
 const TICKET_QTY = 2;
-const SERVICE_FEE = 94.60;
-const INSURANCE_PER_TICKET = 60.00;
+const SERVICE_FEE = 40.90;
+const INSURANCE_PER_TICKET = 25.94;
 
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
