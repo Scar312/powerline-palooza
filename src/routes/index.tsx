@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Tue, Sep 01, 2026, 8:00 PM
+    // Base event: Sun, Aug 02, 2026, 7:00 PM
     const event = new Date(2026, 7, 2, 19, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
@@ -673,8 +673,8 @@ function TotalSection({
 
 const TICKET_UNIT = 230.00;
 const TICKET_QTY = 2;
-const SERVICE_FEE = 94.60;
-const INSURANCE_PER_TICKET = 60.00;
+const SERVICE_FEE = 40.90;
+const INSURANCE_PER_TICKET = 25.94;
 
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
