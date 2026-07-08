@@ -478,7 +478,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              Tame Impala - The Deadbeat Tour • Spectrum Center, Charlotte, NC • {fmtInsuranceDate(eventDate)}
+              Ariana Grande - The Eternal Sunshine Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
