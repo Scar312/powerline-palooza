@@ -57,10 +57,10 @@ function ordinal(n: number) {
 }
 
 function fmtEventLong(d: Date) {
-  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 7:00 PM`;
+  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 8:00 PM`;
 }
 function fmtBarcode(d: Date) {
-  return `7:00 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
+  return `8:00 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
 }
 function fmtInsuranceDate(d: Date) {
   const yy = d.getFullYear().toString().slice(-2);
