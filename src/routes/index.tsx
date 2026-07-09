@@ -127,7 +127,7 @@ function EventCard({ event }: { event: Date }) {
         <p>{fmtEventLong(event)}</p>
         <p>Barclays Center, Brooklyn, NY</p>
         <p>
-          Sec 228, Row 4, Seats 5-10
+          2 Tickets - Sec 228 • Row 5 • Seats 1-2
           <br />
           <a className="text-tm-link underline underline-offset-2" href="#">
             View Seats
@@ -671,10 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 575.50;
+const TICKET_UNIT_DISPLAY = 531.30;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 940.00;
-const SERVICE_FEE = 141.00;
+const TICKET_SUBTOTAL = 924.00;
+const SERVICE_FEE = 138.60;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
