@@ -684,7 +684,7 @@ function CheckoutPage() {
   const [placed, setPlaced] = useState(false);
   const { event, barcode } = useEventDates();
 
-  const ticketSubtotal = TICKET_UNIT * TICKET_QTY;
+  const ticketSubtotal = TICKET_SUBTOTAL;
   const insuranceTotal = INSURANCE_PER_TICKET * TICKET_QTY;
   const insuranceCharge = insurance === "yes" ? insuranceTotal : 0;
   const baseTotal = ticketSubtotal + SERVICE_FEE + insuranceCharge;
