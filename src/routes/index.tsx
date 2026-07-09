@@ -710,7 +710,7 @@ function CheckoutPage() {
         <TotalSection
           total={total}
           ticketSubtotal={ticketSubtotal}
-          ticketUnit={TICKET_UNIT}
+          ticketUnit={TICKET_UNIT_DISPLAY}
           ticketQty={TICKET_QTY}
           fee={SERVICE_FEE}
           insurance={insuranceCharge}
