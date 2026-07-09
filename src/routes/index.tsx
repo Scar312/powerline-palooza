@@ -671,9 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT = 500.00;
+const TICKET_UNIT_DISPLAY = 575.50;
 const TICKET_QTY = 2;
-const SERVICE_FEE = 150.00;
+const TICKET_SUBTOTAL = 940.00;
+const SERVICE_FEE = 141.00;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
