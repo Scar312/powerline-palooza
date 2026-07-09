@@ -127,7 +127,7 @@ function EventCard({ event }: { event: Date }) {
         <p>{fmtEventLong(event)}</p>
         <p>Barclays Center, Brooklyn, NY</p>
         <p>
-          2 Tickets - Sec 230, Row J, Seats 1 - 2
+          Sec 228, Row 4, Seats 5-10
           <br />
           <a className="text-tm-link underline underline-offset-2" href="#">
             View Seats
@@ -671,9 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT = 500.00;
+const TICKET_UNIT_DISPLAY = 575.50;
 const TICKET_QTY = 2;
-const SERVICE_FEE = 150.00;
+const TICKET_SUBTOTAL = 940.00;
+const SERVICE_FEE = 141.00;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
@@ -683,7 +684,7 @@ function CheckoutPage() {
   const [placed, setPlaced] = useState(false);
   const { event, barcode } = useEventDates();
 
-  const ticketSubtotal = TICKET_UNIT * TICKET_QTY;
+  const ticketSubtotal = TICKET_SUBTOTAL;
   const insuranceTotal = INSURANCE_PER_TICKET * TICKET_QTY;
   const insuranceCharge = insurance === "yes" ? insuranceTotal : 0;
   const baseTotal = ticketSubtotal + SERVICE_FEE + insuranceCharge;
@@ -709,7 +710,7 @@ function CheckoutPage() {
         <TotalSection
           total={total}
           ticketSubtotal={ticketSubtotal}
-          ticketUnit={TICKET_UNIT}
+          ticketUnit={TICKET_UNIT_DISPLAY}
           ticketQty={TICKET_QTY}
           fee={SERVICE_FEE}
           insurance={insuranceCharge}
