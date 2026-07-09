@@ -127,7 +127,7 @@ function EventCard({ event }: { event: Date }) {
         <p>{fmtEventLong(event)}</p>
         <p>Barclays Center, Brooklyn, NY</p>
         <p>
-          2 Tickets - Sec 230, Row J, Seats 1 - 2
+          Sec 228, Row 4, Seats 5-10
           <br />
           <a className="text-tm-link underline underline-offset-2" href="#">
             View Seats
