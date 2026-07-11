@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 function useEventDates() {
   return useMemo(() => {
     // Base event: Sun, Jul 19, 2026, 8:00 PM
-    const event = new Date(2026, 7, 22, 19, 30, 0, 0);
+    const event = new Date(2026, 6, 19, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -57,10 +57,10 @@ function ordinal(n: number) {
 }
 
 function fmtEventLong(d: Date) {
-  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 7:30 PM`;
+  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 8:00 PM`;
 }
 function fmtBarcode(d: Date) {
-  return `7:30 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
+  return `8:00 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
 }
 function fmtInsuranceDate(d: Date) {
   const yy = d.getFullYear().toString().slice(-2);
@@ -121,11 +121,11 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        Jonas Brothers: The Burning Up Tour All Over Again
+        Ariana Grande - The Eternal Sunshine Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>Madison Square Garden • New York, NY</p>
+        <p>Barclays Center, Brooklyn, NY</p>
         <p>
           2 Tickets - Sec 227 • Row 16 • Seats 7-8
           <br />
@@ -478,7 +478,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              Jonas Brothers: The Burning Up Tour All Over Again • Madison Square Garden • New York, NY • {fmtInsuranceDate(eventDate)}
+              Ariana Grande - The Eternal Sunshine Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
@@ -671,10 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 248.25;
+const TICKET_UNIT_DISPLAY = 517.50;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 399.90;
-const SERVICE_FEE = 96.60;
+const TICKET_SUBTOTAL = 900.00;
+const SERVICE_FEE = 135.00;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
