@@ -673,8 +673,8 @@ function TotalSection({
 
 const TICKET_UNIT_DISPLAY = 154.05;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 1000.00;
-const SERVICE_FEE = 150.00;
+const TICKET_SUBTOTAL = 246.00;
+const SERVICE_FEE = 62.10;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
