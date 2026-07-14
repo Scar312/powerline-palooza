@@ -35,8 +35,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Sat, Jul 18, 2026, 8:00 PM
-    const event = new Date(2026, 6, 18, 20, 0, 0, 0);
+    // Base event: Fri, Jul 31, 2026, 8:00 PM
+    const event = new Date(2026, 6, 31, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
