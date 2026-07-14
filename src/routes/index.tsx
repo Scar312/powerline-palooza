@@ -35,8 +35,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Sat, Jul 18, 2026, 8:00 PM
-    const event = new Date(2026, 6, 18, 20, 0, 0, 0);
+    // Base event: Fri, Jul 31, 2026, 8:00 PM
+    const event = new Date(2026, 6, 31, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -121,13 +121,13 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        Ariana Grande - The Eternal Sunshine Tour
+        J. Cole: The Fall-Off Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
         <p>Barclays Center, Brooklyn, NY</p>
         <p>
-          2 Tickets - Sec 204 • Row 14 • Seats 1-2
+          2 Tickets - Sec 206 • Row 22 • Seats 7-10
           <br />
           <a className="text-tm-link underline underline-offset-2" href="#">
             View Seats
@@ -478,7 +478,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              JAY-Z30 • SoFi Stadium, Inglewood, CA • {fmtInsuranceDate(eventDate)}
+              J. Cole: The Fall-Off Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
@@ -671,10 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 188.50;
+const TICKET_UNIT_DISPLAY = 80.92;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 377.00;
-const SERVICE_FEE = 56.55;
+const TICKET_SUBTOTAL = 136.00;
+const SERVICE_FEE = 25.84;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
