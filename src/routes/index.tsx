@@ -121,13 +121,13 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        Ariana Grande - The Eternal Sunshine Tour
+        J. Cole: The Fall-Off Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
         <p>Barclays Center, Brooklyn, NY</p>
         <p>
-          2 Tickets - Sec 204 • Row 14 • Seats 1-2
+          2 Tickets - Sec 206 • Row 22 • Seats 7-10
           <br />
           <a className="text-tm-link underline underline-offset-2" href="#">
             View Seats
