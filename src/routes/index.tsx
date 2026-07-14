@@ -121,7 +121,7 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        J. Cole: The Fall-Off Tour
+        Ariana Grande - The Eternal Sunshine Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
@@ -671,10 +671,10 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 470.35;
+const TICKET_UNIT_DISPLAY = 188.50;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 818.00;
-const SERVICE_FEE = 122.70;
+const TICKET_SUBTOTAL = 377.00;
+const SERVICE_FEE = 56.55;
 const INSURANCE_PER_TICKET = 56.39;
 
 function CheckoutPage() {
