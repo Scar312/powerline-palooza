@@ -121,13 +121,13 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        JAY-Z30
+        Ariana Grande - The Eternal Sunshine Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>SoFi Stadium, Inglewood, CA</p>
+        <p>Barclays Center, Brooklyn, NY</p>
         <p>
-          2 Tickets - Sec 541 • Row 13
+          2 Tickets - Sec 204 • Row 14 • Seats 1-2
           <br />
           <a className="text-tm-link underline underline-offset-2" href="#">
             View Seats
