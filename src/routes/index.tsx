@@ -478,7 +478,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              JAY-Z30 • SoFi Stadium, Inglewood, CA • {fmtInsuranceDate(eventDate)}
+              J. Cole: The Fall-Off Tour • Barclays Center, Brooklyn, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
