@@ -347,7 +347,7 @@ function PromoBlock({
               </div>
               <div>
                 <div className="text-[14px] font-bold text-tm-text">
-                  Student Discount Applied!
+                  Ratingfeed.com discount applied.
                 </div>
                 <div className="text-[12px] text-tm-muted">Code: {applied}</div>
               </div>
@@ -612,7 +612,7 @@ function TotalSection({
             {promoApplied && (
               <div className="mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[15px] font-bold text-tm-green">
-                  <span>Student Discount</span>
+                  <span>Ratingfeed.com Discount</span>
                   <HelpCircle className="h-4 w-4 text-tm-green" />
                 </div>
                 <div className="text-[15px] font-bold text-tm-green">
@@ -671,11 +671,11 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 79.86;
+const TICKET_UNIT_DISPLAY = 87.85;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 132.00;
-const SERVICE_FEE = 27.72;
-const INSURANCE_PER_TICKET = 56.39;
+const TICKET_SUBTOTAL = 145.20;
+const SERVICE_FEE = 30.49;
+const INSURANCE_PER_TICKET = 62.03;
 
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
