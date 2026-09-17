@@ -35,8 +35,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Fri, Oct 02, 2026, 7:30 PM
-    const event = new Date(2026, 9, 2, 19, 30, 0, 0);
+    // Base event: Fri, Oct 09, 2026, 8:00 PM
+    const event = new Date(2026, 9, 9, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -57,10 +57,10 @@ function ordinal(n: number) {
 }
 
 function fmtEventLong(d: Date) {
-  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 7:30 PM`;
+  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • 8:00 PM`;
 }
 function fmtBarcode(d: Date) {
-  return `7:30 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
+  return `8:00 PM EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
 }
 function fmtInsuranceDate(d: Date) {
   const yy = d.getFullYear().toString().slice(-2);
@@ -121,11 +121,11 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        Bryson Tiller Presents: The Neo Trapsoul Tour
+        Harry Styles: Together, Together
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>Ruoff Music Center, Noblesville, IN</p>
+        <p>Madison Square Garden, New York, NY</p>
         <p>
           2 Tickets - Sec 206 • Row 22 • Seats 7-10
           <br />
@@ -478,7 +478,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              Bryson Tiller Presents: The Neo Trapsoul Tour • Ruoff Music Center, Noblesville, IN • {fmtInsuranceDate(eventDate)}
+              Harry Styles: Together, Together • Madison Square Garden, New York, NY • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
