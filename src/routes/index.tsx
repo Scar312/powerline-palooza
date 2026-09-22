@@ -671,11 +671,11 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 87.85;
+const TICKET_UNIT_DISPLAY = 296.00;
 const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 145.20;
-const SERVICE_FEE = 30.49;
-const INSURANCE_PER_TICKET = 62.03;
+const TICKET_SUBTOTAL = 489.23;
+const SERVICE_FEE = 102.73;
+const INSURANCE_PER_TICKET = 209.00;
 
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
