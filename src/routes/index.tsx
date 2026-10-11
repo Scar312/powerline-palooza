@@ -352,7 +352,7 @@ function PromoBlock({
               </div>
               <div>
                 <div className="text-[14px] font-bold text-tm-text">
-                  Ratingfeed.com discount applied.
+                  Student discount applied.
                 </div>
                 <div className="text-[12px] text-tm-muted">Code: {applied}</div>
               </div>
@@ -617,7 +617,7 @@ function TotalSection({
             {promoApplied && (
               <div className="mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[15px] font-bold text-tm-green">
-                  <span>Ratingfeed.com Discount</span>
+                  <span>Student Discount</span>
                   <HelpCircle className="h-4 w-4 text-tm-green" />
                 </div>
                 <div className="text-[15px] font-bold text-tm-green">
