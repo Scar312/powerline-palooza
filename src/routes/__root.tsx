@@ -101,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  errorComponent: ErrorComponent as unknown as React.ComponentType<import("@tanstack/react-router").ErrorComponentProps>,
 });
 
 function RootShell({ children }: { children: ReactNode }) {
