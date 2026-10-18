@@ -20,6 +20,13 @@ import paypalPMark from "@/assets/paypal-p.png.asset.json";
 import klarnaAsset from "@/assets/klarna-v2.png.asset.json";
 import applepayAsset from "@/assets/applepay-v2.png.asset.json";
 import venmoAsset from "@/assets/venmo-v2.png.asset.json";
+import {
+  calculateCheckoutTotals,
+  INSURANCE_PER_TICKET,
+  SERVICE_FEE,
+  TICKET_QTY,
+  TICKET_UNIT_DISPLAY,
+} from "@/lib/pricing";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -680,12 +687,6 @@ function TotalSection({
 
 /* ------------------------------- Page ------------------------------- */
 
-const TICKET_UNIT_DISPLAY = 296.00;
-const TICKET_QTY = 2;
-const TICKET_SUBTOTAL = 489.23;
-const SERVICE_FEE = 102.73;
-const INSURANCE_PER_TICKET = 209.00;
-
 function CheckoutPage() {
   const [promo, setPromo] = useState<string | null>(null);
   const [insurance, setInsurance] = useState<"yes" | "no" | null>(null);
@@ -693,12 +694,14 @@ function CheckoutPage() {
   const [placed, setPlaced] = useState(false);
   const { event, barcode } = useEventDates();
 
-  const ticketSubtotal = TICKET_SUBTOTAL;
-  const insuranceTotal = INSURANCE_PER_TICKET * TICKET_QTY;
-  const insuranceCharge = insurance === "yes" ? insuranceTotal : 0;
-  const baseTotal = ticketSubtotal + SERVICE_FEE + insuranceCharge;
-  const discount = promo ? baseTotal * 0.85 : 0;
-  const total = Math.max(0, baseTotal - discount);
+  const {
+    ticketSubtotal,
+    insuranceTotal,
+    insuranceCharge,
+    baseTotal,
+    discount,
+    total,
+  } = calculateCheckoutTotals(!!promo, insurance === "yes");
 
   return (
     <div className="min-h-screen bg-tm-bg">

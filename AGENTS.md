@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep checkout monetary values and calculations in a browser-safe pricing module so line items and totals share one source of truth.
