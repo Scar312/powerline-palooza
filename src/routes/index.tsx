@@ -24,8 +24,12 @@ import venmoAsset from "@/assets/venmo-v2.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Checkout — Ticketmaster" },
-      { name: "description", content: "Complete your ticket purchase." },
+      { title: "Calvin Harris - North America Tour | Ticket Checkout" },
+      { name: "description", content: "Ticket checkout for Calvin Harris - North America Tour at Moody Center ATX in Austin, Texas." },
+      { property: "og:title", content: "Calvin Harris - North America Tour | Ticket Checkout" },
+      { property: "og:description", content: "Ticket checkout for Calvin Harris - North America Tour at Moody Center ATX in Austin, Texas." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CheckoutPage,
@@ -35,8 +39,8 @@ export const Route = createFileRoute("/")({
 
 function useEventDates() {
   return useMemo(() => {
-    // Base event: Sun, Nov 15, 2026, 7:00 PM
-    const event = new Date(2026, 10, 15, 19, 0, 0, 0);
+    // Base event: Sun, Apr 25, 2027, 8:00 PM
+    const event = new Date(2027, 3, 25, 20, 0, 0, 0);
     const barcode = new Date(event);
     barcode.setDate(barcode.getDate() - 31);
     return { event, barcode };
@@ -62,10 +66,10 @@ function fmtTime12(d: Date) {
   return `${h12}:00 PM`;
 }
 function fmtEventLong(d: Date) {
-  return `${DAY_NAMES[d.getDay()]} • ${MONTH_NAMES[d.getMonth()]} ${d.getDate().toString().padStart(2, "0")}, ${d.getFullYear()} • ${fmtTime12(d)}`;
+  return `${DAY_NAMES[d.getDay()]}, ${MONTH_NAMES[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}, ${fmtTime12(d)}`;
 }
 function fmtBarcode(d: Date) {
-  return `${fmtTime12(d)} EDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
+  return `${fmtTime12(d)} CDT on ${MONTH_NAMES[d.getMonth()]} ${ordinal(d.getDate())}.`;
 }
 function fmtInsuranceDate(d: Date) {
   const yy = d.getFullYear().toString().slice(-2);
@@ -126,11 +130,11 @@ function EventCard({ event }: { event: Date }) {
   return (
     <Card className="mt-3 px-6 pb-6 pt-6">
       <h2 className="text-[22px] font-bold uppercase leading-[1.15] tracking-[0.005em] text-tm-text">
-        Olivia Rodrigo: The Unraveled Tour
+        Calvin Harris - North America Tour
       </h2>
       <div className="mt-4 space-y-3 text-[15px] leading-snug text-tm-muted">
         <p>{fmtEventLong(event)}</p>
-        <p>Kia Center, Orlando, FL</p>
+        <p>Moody Center ATX, Austin, TX</p>
         <p>
           2 Tickets - Sec 206 • Row 22 • Seats 7-10
           <br />
@@ -483,7 +487,7 @@ function InsuranceCard({
               Yes, protect my ticket purchase.
             </div>
             <div className="mt-1 text-[15px] text-tm-muted">
-              Olivia Rodrigo: The Unraveled Tour • Kia Center, Orlando, FL • {fmtInsuranceDate(eventDate)}
+              Calvin Harris - North America Tour • Moody Center ATX, Austin, TX • {fmtInsuranceDate(eventDate)}
             </div>
           </div>
         </button>
