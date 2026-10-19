@@ -1,0 +1,3 @@
+- [x] Update ticket unit price to $375.21 and recalculate the checkout subtotal and fee totals.
+- [x] Change valid promo codes to deduct 90% of the complete calculated total.
+- [x] Verify discounted totals with and without ticket insurance.
