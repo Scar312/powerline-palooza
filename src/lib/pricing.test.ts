@@ -2,12 +2,21 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { calculateCheckoutTotals } from "./pricing";
 
-test("an 85% promo leaves $30.00 when insurance is declined", () => {
-  assert.equal(calculateCheckoutTotals(true, false).total, 30);
+test("two $375.21 tickets plus the $30 fee total $780.42", () => {
+  const totals = calculateCheckoutTotals(false, false);
+  assert.equal(totals.ticketSubtotal, 750.42);
+  assert.equal(totals.baseTotal, 780.42);
 });
 
-test("an 85% promo leaves $36.00 with two $20.00 insurance charges", () => {
+test("a 90% promo leaves $78.04 when insurance is declined", () => {
+  const totals = calculateCheckoutTotals(true, false);
+  assert.equal(totals.discount, 702.38);
+  assert.equal(totals.total, 78.04);
+});
+
+test("a 90% promo leaves $82.04 with two $20.00 insurance charges", () => {
   const totals = calculateCheckoutTotals(true, true);
   assert.equal(totals.insuranceCharge, 40);
-  assert.equal(totals.total, 36);
+  assert.equal(totals.discount, 738.38);
+  assert.equal(totals.total, 82.04);
 });
